@@ -25,3 +25,14 @@ end
 def power(number, power)
   number ** power
 end
+
+def factorial(n)
+  return 1 if n == 0 or n == 1
+  fac = 1
+  loop do
+    break if n == 1
+    fac = fac * n
+    n -= 1
+  end
+  fac
+end
