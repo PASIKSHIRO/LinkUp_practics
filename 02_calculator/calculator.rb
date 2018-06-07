@@ -7,32 +7,17 @@ def subtract(number1, number2)
 end
 
 def sum(array)
-  sum = 0
-  array.each do |number|
-    sum += number
-  end
-   sum
+  array.reduce(:+)
 end
 
 def multiply(array)
-  multiply = 1
-    array.each do |elenent|
-      multiply *= elenent
-    end
-  multiply
+  array.reduce(:*)
 end
 
 def power(number, power)
-  number ** power
+  number**power
 end
 
-def factorial(n)
-  return 1 if n == 0 or n == 1
-  fac = 1
-  loop do
-    break if n == 1
-    fac = fac * n
-    n -= 1
-  end
-  fac
+def factorial(number)
+  (1..number).reduce(:*)
 end

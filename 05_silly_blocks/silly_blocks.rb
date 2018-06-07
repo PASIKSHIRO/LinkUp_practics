@@ -1,21 +1,14 @@
 def reverser
-  k = []
-  x = yield.split(" ")
-  x.each do |y|
-    n = y.reverse
-    k.push(n)
-  end
-
-  m = k.join(" ")
-  m
+  test = yield
+  arr = test.split(' ')
+  arr.each_index { |i| arr[i] = arr[i].reverse }
+  arr.join(' ')
 end
 
-def adder(num=1, &block)
-  block.call + num
+def adder(add = 1)
+  yield + add
 end
 
-def repeater(num=1, &block)
-  for i in (1..num) do
-    block.call
-  end
+def repeater(repeat = 1)
+  repeat.times { yield }
 end

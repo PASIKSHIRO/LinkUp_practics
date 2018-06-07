@@ -121,7 +121,7 @@ require "hello"
 
 describe "the hello function" do
   it "says hello" do
-    expect( hello).to eq("Hello!")
+    expect(hello).to eq("Hello!")
   end
 end
 
@@ -131,6 +131,6 @@ describe "the greet function" do
   end
 
   it "says hello to Bob" do
-    expect(greet("Bob")).to eq( "Hello, Bob!")
+    expect(greet("Bob")).to eq("Hello, Bob!")
   end
 end

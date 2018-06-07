@@ -1,18 +1,7 @@
-def ftoc(degree)
-
-  converted = ((degree-32)*Rational(5,9)).to_i
-
-  if converted<=100
-     converted
-  else
-    100
-  end
-
+def ftoc(temperature)
+  (temperature - 32.0) * 5.0 / 9.0
 end
 
-def ctof(degree)
-
-  converted = (degree*Rational(9 ,5)+32).to_f
-
+def ctof(temperature)
+  temperature * 9.0 / 5.0 + 32.0
 end
-

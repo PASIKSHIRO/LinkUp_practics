@@ -1,19 +1,18 @@
+# Class
 class XmlDocument
   def initialize(indent = false)
     @indent = indent
     @indent_level = 0
   end
 
-  def method_missing(method_name, *args, &block)
-    @xmldoc = ""
+  def method_missing(method_name, *args, _block)
+    @xmldoc = ''
     indent_xml
-
-
     @xmldoc += "<#{method_name}"
     add_attributes(args)
 
     if block_given?
-      @xmldoc += ">"
+      @xmldoc += '>'
       linebreak_xml
 
       @indent_level += 1
@@ -22,7 +21,7 @@ class XmlDocument
       indent_xml
       @xmldoc += "</#{method_name}>"
     else
-      @xmldoc += "/>"
+      @xmldoc += '/>'
     end
     linebreak_xml
     @xmldoc
@@ -32,7 +31,7 @@ class XmlDocument
 
   def add_attributes(args)
     if args.count > 0
-      @xmldoc += " "
+      @xmldoc += ' '
       args.each do |hash|
         hash.each do |key, value|
           @xmldoc += "#{key}='#{value}'"
@@ -42,11 +41,10 @@ class XmlDocument
   end
 
   def indent_xml
-    @xmldoc += "  " * @indent_level if @indent
+    @xmldoc += ' ' * @indent_level if @indent
   end
 
   def linebreak_xml
     @xmldoc += "\n" if @indent
   end
-
 end

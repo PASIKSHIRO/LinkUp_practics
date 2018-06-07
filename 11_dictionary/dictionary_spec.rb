@@ -82,6 +82,6 @@ describe Dictionary do
     @d.add('zebra' => 'African land animal with stripes')
     @d.add('fish' => 'aquatic animal')
     @d.add('apple' => 'fruit')
-    expect(@d.printable).to eql( %Q{[apple] "fruit"\n[fish] "aquatic animal"\n[zebra] "African land animal with stripes"} )
+    expect(@d.printable).to eq( %Q{[apple] "fruit"\n[fish] "aquatic animal"\n[zebra] "African land animal with stripes"} )
   end
 end

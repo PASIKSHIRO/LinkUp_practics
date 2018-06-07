@@ -1,3 +1,4 @@
+# Class
 class Dictionary
   attr_accessor :entries, :keywords
 
@@ -32,12 +33,11 @@ class Dictionary
   end
 
   def printable
-    output = ""
+    output = ''
     @keywords.sort.each_with_index do |key, index|
       output << "[#{key}] \"#{@entries[key]}\""
-      output << "\n" if index < @keywords.size-1
+      output << '\n' if index < @keywords.size - 1
     end
     output
   end
-
 end
