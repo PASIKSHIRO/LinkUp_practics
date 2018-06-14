@@ -58,7 +58,7 @@ end
 
 describe "sum" do
   it "computes the sum of an empty array" do
-    expect(sum([])).to eq( 0 )
+    expect(sum( [])).to eq( 0 )
   end
 
   it "computes the sum of an array of one number" do

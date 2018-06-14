@@ -19,16 +19,8 @@ def first_word(string)
   string.split(' ')[0]
 end
 
-
 def titleize(string)
   littlewords = %w[and over the]
-  string[0] = string[0].upcase
-  if string.include?(' ')
-    words = string.split(' ')
-    words.each_index do |i|
-      words[i][0] = words[i][0].upcase unless littlewords.include?(words[i])
-    end
-    string = words.join(' ')
-  end
-  string
+  string.capitalize!
+  string.gsub(/\w+/) {|match| littlewords.include?(match) ? match : match.capitalize}
 end

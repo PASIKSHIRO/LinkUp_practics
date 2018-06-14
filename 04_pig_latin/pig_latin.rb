@@ -12,7 +12,7 @@ def vowels
 end
 
 def translate(string)
-  if string.include?(' ')
+  if
     words = string.split(' ')
     words.each_index { |i| words[i] = translate_word(words[i]) }.join(' ')
   else
@@ -21,7 +21,7 @@ def translate(string)
 end
 
 def translate_word(word)
-  capitalize = true if is_capitalized?(word)
+  capitalize = is_capitalized?(word)
   word.downcase!
   if begins_with_vowel?(word)
     word << 'ay'

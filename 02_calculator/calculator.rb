@@ -18,6 +18,6 @@ def power(number, power)
   number**power
 end
 
-def factorial(number)
-  (1..number).reduce(:*)
+def factorial(number1)
+  (1..number1).reduce(:*)
 end
